@@ -9,11 +9,11 @@ section .text
     
  _start:
  	mov eax, 1h
-    mov edi, 1
-    mov esi, message
-    mov edx, 12
-    syscall           ; write(fd=stdout, msg="Hello World", len=12)
+    	mov edi, 1
+    	mov esi, message
+    	mov edx, 12
+	syscall           ; write(fd=stdout, msg="Hello World", len=12)
 
-    mov eax, 45h
-    mov edi, 0
-    syscall           ; exit(error_code=EXIT_SUCCESS);
+	mov eax, 45h
+	mov edi, 0
+	syscall           ; exit(error_code=EXIT_SUCCESS);
