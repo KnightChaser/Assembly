@@ -8,13 +8,13 @@ section .text
     global _start
     
 _start:
-    ; write(FILE_DESCRIPTOR, MESSAGE, LENGTH)
-    mov eax, 0x4
-    mov ebx, 1      
-    mov ecx, message
-    mov edx, length
+
+    mov eax, 0x4        ; write(
+    mov ebx, 1          ;   FILE_DESCRIPTOR = STDOUT,
+    mov ecx, message    ;   BUFFER = message,
+    mov edx, length     ;   LENGTH = length
+                        ; );
     int 0x80            ; syscall
     
-    ; exit
-    mov eax, 0x1
+    mov eax, 0x1        ; exit();
     int 0x80            ; syscall
