@@ -1,10 +1,10 @@
 ; Nasm v2.15.05 (on Linux x86)
 
 section .data
-    name db 'KnightChaser'
+    name db 'KnightChaser'            ; name
     nameLength equ $-name
     
-    newLineMsg db 0xA
+    newLineMsg db 0xA                 ; newline
     newLineLen equ $-newLineMsg
     
 section .text
@@ -26,13 +26,14 @@ _start:
     mov eax, 4
     int 0x80
     
-    ; overwrite the data amount of DWORD
+    ; overwrite the data amount of WORD
+    ; replace one by one, including NULL string(\0) explicitly
     mov [name + 0x6], BYTE 'R'
     mov [name + 0x7], BYTE 'i'
     mov [name + 0x8], BYTE 'd'
     mov [name + 0x9], BYTE 'e'
     mov [name + 0xA], BYTE 'r'
-    mov [name + 0xB], BYTE 0x0
+    mov [name + 0xB], BYTE 0x0        ; NULL(\0) string
     
     ; Writing the (fixed) name again
     mov eax, 0x4        ; write
