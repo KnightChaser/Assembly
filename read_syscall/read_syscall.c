@@ -4,8 +4,8 @@ int main() {
     
     char x[4];
     
-    scanf("%s", x);
-    printf("%s", x);
+    gets(x);
+    puts(x);
     
     return 0;
     
