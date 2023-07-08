@@ -17,7 +17,7 @@ _start:
     
     ; write(FILE_DESCRIPTOR, BUFFER, LENGTH)
     mov eax, 0x4              ; write(
-    mov ebx, 1                ;     fd = stdout,
+    mov ebx, 0x1              ;     fd = stdout,
     mov ecx, integer          ;     buf = integer,
     mov edx, integerLength    ;     length = integerLength);
     int 0x80
