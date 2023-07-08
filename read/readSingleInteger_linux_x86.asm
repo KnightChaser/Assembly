@@ -9,19 +9,19 @@ section .text
     
 _start:
     ; read(FILE_DESCRIPTOR, BUFFER, LENGTH)
-    mov eax, 0x3              ; syscall read() -> 0x3
-    mov ebx, 0                ; stdin
-    mov ecx, integer          ; buffer (variable integer)
-    mov edx, integerLength    ; buffer length
+    mov eax, 0x3              ; read(
+    mov ebx, 0x0              ;     fd = stdin,
+    mov ecx, integer          ;     buf = integer,
+    mov edx, integerLength    ;     length = integerLength);
     int 0x80
     
     ; write(FILE_DESCRIPTOR, BUFFER, LENGTH)
-    mov eax, 0x4              ; syscall write() -> 0x4
-    mov ebx, 1                ; stdout
-    mov ecx, integer          ; buffer (variable integer)
-    mov edx, integerLength    ; buffer length
+    mov eax, 0x4              ; write(
+    mov ebx, 1                ;     fd = stdout,
+    mov ecx, integer          ;     buf = integer,
+    mov edx, integerLength    ;     length = integerLength);
     int 0x80
     
-    ; exit
-    mov eax, 0x1              ; exit
+    ; sys_exit()
+    mov eax, 0x1              ; sys_exit();
     int 0x80
