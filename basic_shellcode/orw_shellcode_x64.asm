@@ -1,6 +1,7 @@
 ; Nasm v2.15.05 (on Linux x64)
 
 O_RDONLY        equ     0x00
+STDIN           equ     0x00
 STDOUT          equ     0x01
 
 section .data
@@ -14,7 +15,7 @@ _start:
         mov rax, 0x02           ; open(
         mov rdi, filePath       ;       const char *filename,
         mov rsi, O_RDONLY       ;       int flags,
-        mov rdx, 0x00           ;       ummod_t mode);
+        mov rdx, STDIN          ;       ummod_t mode);
         syscall
 
         ; read(STDIN, buf, 0x30);
