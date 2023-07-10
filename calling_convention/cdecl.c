@@ -1,4 +1,5 @@
 // For x86 architecture
+// On WSL Ubuntu 22.04 (on Windows 11)
 
 // Name: cdecl.c
 // Compile: gcc -fno-asynchronous-unwind-tables -nostdlib -masm=intel \
