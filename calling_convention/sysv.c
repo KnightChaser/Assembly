@@ -1,6 +1,9 @@
 // Name: sysv.c
+// For x64(x86-64) architecture
+// On WSL Ubuntu 22.04 (on Windows 11)
+
 // Compile: gcc -fno-asynchronous-unwind-tables  -masm=intel \
-//
+//		-fno-omit-frame-pointer -o sysv sysv.c -fno-pic -O0
 
 #define ull unsigned long long
 
