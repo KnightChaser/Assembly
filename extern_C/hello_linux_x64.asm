@@ -5,8 +5,8 @@ extern  printf          ; declare the function as alien
 SYS_EXIT        EQU     0x3C
 
 section .data
-        message         DB      "Hello, World!", 0x0
-        formatString    DB      "String: %s",10, 0x0    ; printf format
+        message         DB      "Hello, World!", 0x0            ; 0x0 for NULL delimter
+        formatString    DB      "String: %s",0xA, 0x0           ; printf format / 0xA for newline / 0x0 for NULL delimter
 
 section .text
         global main
