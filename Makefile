@@ -11,8 +11,9 @@ example_assembly_file_x32: example_assembly_file_x32.asm
     ld -m elf_i386 -s -o example_assembly_file_x32 example_assembly_file_x32.o
 
 # For 64 bit architecture (with external C libraries)
-    nasm -f elf64 -o example_assembly_file_x64.o example_assembly_file_x64.asm
-    gcc -o hello example_assembly_file_x64.o -no-pie
+example_assembly_file_x64_extern_C: example_assembly_file_x64_extern_C.o
+    nasm -f elf64 -o example_assembly_file_x64_extern_C.o example_assembly_file_x64_extern_C.asm
+    gcc -o example_assembly_file_x64_extern_C example_assembly_file_x64_extern_C.o -no-pie
 
 clean:
     rm -f ./example_assembly_file_x*        # Delete the executable file
