@@ -5,7 +5,7 @@ extern  printf          ; declare the function as alien
 SYS_EXIT        EQU     0x3C
 
 section .data
-        msg             DB      "Hello, World!", 0x0
+        message         DB      "Hello, World!", 0x0
         formatString    DB      "String: %s",10, 0x0    ; printf format
 
 section .text
@@ -16,7 +16,7 @@ section .text
                 mov     rbp, rsp
 
                 mov     rdi, formatString       ; first argument for printf
-                mov     rsi, msg                ; second argument for printf
+                mov     rsi, message            ; second argument for printf
                 call    printf                  ; call the function
 
                 mov     rsp, rbp
