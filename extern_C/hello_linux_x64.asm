@@ -22,6 +22,4 @@ section .text
                 mov     rsp, rbp
                 pop     rbp
 
-                mov     rax, SYS_EXIT
-                mov     rdi, 0x0
-                syscall
+                ret                             ; Finish
