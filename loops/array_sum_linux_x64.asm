@@ -18,8 +18,6 @@ section .text
                 push    rbp
                 mov     rbp, rsp
 
-                mov     rbx, 0x0
-
                 ; Add all elements in the array
                 mov     r9,  0xA                        ; the length of array
                 mov     r10, 0x0                        ; index
