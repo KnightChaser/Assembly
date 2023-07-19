@@ -21,8 +21,7 @@ section .text
                 ; Add all elements in the array
                 mov     r9,  0xA                        ; the length of array
                 mov     r10, 0x0                        ; index
-                mov     r11, 0x0                        ; sum
-                mov     [sum], DWORD 0x0
+                mov     [sum], DWORD 0x0                ; sum
 
                 _loop:
                         xor     rax, rax
