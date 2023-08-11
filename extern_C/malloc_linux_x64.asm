@@ -35,15 +35,15 @@ section .text
                 add    rax, 0x0                 ; 0th index, *(rax+0x0)
                 mov    DWORD [rax], 0x0         ; integerArray[0] = 0;
 
-                mov    rax,QWORD [rbp-0x8]
+                mov    rax, QWORD [rbp-0x8]
                 add    rax, 0x4                 ; 1st index, *(rax+sizeof(int)*1) = *(rax+4)
                 mov    DWORD [rax], 0x1         ; integerArray[1] = 1;
 
-                mov    rax,QWORD [rbp-0x8]
+                mov    rax, QWORD [rbp-0x8]
                 add    rax, 0x8                 ; 2nd index, *(rax+sizeof(int)*2) = *(rax+8)
                 mov    DWORD [rax], 0x2         ; integerArray[2] = 2;
 
-                mov    rax,QWORD [rbp-0x8]
+                mov    rax, QWORD [rbp-0x8]
                 add    rax, 0xC                 ; 3rd inex, *(rax+sizeof(int)*3) = *(rax+12)
                 mov    DWORD [rax], 0x3         ; integerArray[3] = 3;
 
@@ -66,8 +66,9 @@ section .text
                         jmp     _printLoopEnd
 
                 _printLoopEnd:
-                mov     rdi, QWORD [rbp-0x8]        ; int *integerArray
-                call    free                        ; call free to deallocate the space
+
+                mov     rdi, QWORD [rbp-0x8]            ; int *integerArray
+                call    free                            ; call free to deallocate the space
 
                 mov     rsp, rbp
                 pop     rbp
