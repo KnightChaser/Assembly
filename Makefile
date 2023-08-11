@@ -16,5 +16,5 @@ example_assembly_file_x64_extern_C: example_assembly_file_x64_extern_C.asm
     gcc -o example_assembly_file_x64_extern_C example_assembly_file_x64_extern_C.o -no-pie
 
 clean:
-    rm -f ./example_assembly_file_x*        # Delete the executable file
+    rm -f ./example_assembly_file_x         # Delete the executable file
     rm -f ./example_assembly_file_x*.o      # Delete the objective file
