@@ -66,8 +66,8 @@ section .text
                         jmp     _printLoopEnd
 
                 _printLoopEnd:
-                mov     rdi, QWORD [rbp-0x8]
-                call    free
+                mov     rdi, QWORD [rbp-0x8]        ; int *integerArray
+                call    free                        ; call free to deallocate the space
 
                 mov     rsp, rbp
                 pop     rbp
