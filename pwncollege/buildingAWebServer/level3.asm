@@ -15,7 +15,7 @@ _start:
 		mov rax, 0x29
 		syscall
 
-		#bind(3, {sa_family=AF_INET, sin_port=htons(<bind_port>), sin_addr=inet_addr("<bind_address>")}, 16)
+		# bind(3, {sa_family=AF_INET, sin_port=htons(<bind_port>), sin_addr=inet_addr("<bind_address>")}, 16)
 		# - Bind to port 80 -> htons(80) == 0x5000
 		# - Bind to address 0.0.0.0 -> 0x0 in integer
 		mov rdi, rax	# socket file descriptor
