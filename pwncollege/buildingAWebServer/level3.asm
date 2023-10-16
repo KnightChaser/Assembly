@@ -26,9 +26,9 @@ _start:
 		mov WORD PTR [rsp + 0x2], 0x5000	# htons(<bind_port>)
 		mov WORD PTR [rsp],	  0x2		# AF_INET
 		mov rsi, rsp				# - Insert SOCKADDR_STRUCT
-		push 0x31
+		push 0x31				# syscall number for bind()
 		pop rax
-		push 0x10
+		push 0x10				# last parameter
 		pop rdx
 		syscall	
 
