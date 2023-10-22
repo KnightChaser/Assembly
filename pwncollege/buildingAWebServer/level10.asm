@@ -166,9 +166,9 @@ _start:
 				lea rax, [buffer + rcx]
 
 				# Determine the length of content
-				xor rbx, rbx
+				xor rbx, rbx					# store content's real length in byte 
 				_MeasureContentLength:
-					cmp BYTE PTR [buffer + rcx], 0x0	# NULL
+					cmp BYTE PTR [buffer + rcx], 0x0	# NULL (finding end point)
 					je _extractFileContentDone
 					inc rcx
 					inc rbx
@@ -179,8 +179,8 @@ _start:
 					
 
 		# write(3, <write_file>, <write_file_count>) = <write_file_result>
-		mov rdx, rbx
-		mov rsi, rax
+		mov rdx, rbx	# content-length
+		mov rsi, rax	# content
 		mov rdi, 0x3
 		mov rax, 0x1
 		syscall
