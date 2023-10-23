@@ -5,7 +5,7 @@ start
 break *main+709
 commands
     silent
-    set $randomFhttps://www.onlinegdb.com/#editor_1lag = *(unsigned long long*)($rbp-0x18)
+    set $randomFlag = *(unsigned long long*)($rbp-0x18)
     printf "Current Random Flag(Use this for the current session): %llx\n", $randomFlag
     continue
 end
